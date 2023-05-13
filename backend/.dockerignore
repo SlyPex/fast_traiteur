@@ -6,3 +6,4 @@ node_modules
 .dockerignore
 Dockerfile
 dist
+.env
