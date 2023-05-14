@@ -1,8 +1,5 @@
 import { Module } from '@nestjs/common';
-import { UserResModule } from './User_Res/userRes.module';
 
 
-@Module({
-  imports: [UserResModule],
-})
+@Module({})
 export class AppModule {}

@@ -15,7 +15,7 @@ services:
   backend:
     build: ./backend/
     environment:
-      DB_HOST: mysql://app:user@database:3306/fast_traiteur
+      DB_HOST: mysql://root:admin@database:3306/fast_traiteur
     ports:
       - 21001:3000
     volumes:
@@ -30,10 +30,8 @@ services:
   database:
     image: mysql:8.0
     environment:
-      MYSQL_ROOT_PASSWORD: admin
-      MYSQL_USER: app
-      MYSQL_PASSWORD: user
       MYSQL_DATABASE: fast_traiteur
+      MYSQL_ROOT_PASSWORD: admin
     ports:
       - 21002:3306
     volumes:
