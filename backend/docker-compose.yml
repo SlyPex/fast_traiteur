@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: fast_traiteur
+    ports:
+      - "21001:3306"
