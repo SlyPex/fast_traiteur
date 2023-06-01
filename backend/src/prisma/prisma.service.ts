@@ -1,15 +1,13 @@
-import { Injectable } from '@nestjs/common';
-import {PrismaClient} from '@prisma/client';
+import { Injectable } from "@nestjs/common";
+import { PrismaClient } from "@prisma/client";
 
-@Injectable()
+@Injectable({})
 export class PrismaService extends PrismaClient{
-    constructor() {
-            super({
-                    datasources: {
-                        db: {
-                            url: "mysql://root:admin@localhost:21001/fast_traiteur?schema=public"
-                        },
-                    },
-                });
-    }
+	constructor(){
+		super({datasources: {
+			db: {
+				url:process.env.DATABASE_URL
+			}
+		}})
+	}
 }
