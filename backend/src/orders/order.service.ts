@@ -24,4 +24,11 @@ export class OrderService {
 
     return createdOrder;
   }
+
+  async deleteOrder(orderId: number ): Promise<void> {
+    await this.prisma.order.delete({
+       where: {
+         id: Number(orderId ),}
+    });
+  }
 }
