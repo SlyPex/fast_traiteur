@@ -6,8 +6,8 @@ import { PrismaModule } from './prisma/prisma.module';
 import { OrderModule } from './orders/order.module';
 
 @Module({
-  providers: [MenuFetchService],
-  controllers: [MenuFetchController],
+  providers: [],
+  controllers: [],
   imports: [MenuFetchModule,PrismaModule,OrderModule]
   })
 export class AppModule {}
