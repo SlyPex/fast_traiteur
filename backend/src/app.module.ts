@@ -9,4 +9,5 @@ import { OrderModule } from './orders/order.module';
   providers: [MenuFetchService],
   controllers: [MenuFetchController],
   imports: [MenuFetchModule,PrismaModule,OrderModule]
+  })
 export class AppModule {}
