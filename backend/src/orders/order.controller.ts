@@ -1,4 +1,4 @@
-import { Body, Controller, Post, Put, Query, UsePipes, ValidationPipe, } from '@nestjs/common';
+import { Body, Controller, Post,Put, Delete, Query, UsePipes, ValidationPipe, } from '@nestjs/common';
 import { OrderService } from './order.service';
 import { OrderDto } from './dto';
 
@@ -14,5 +14,16 @@ export class OrderController {
   passOrder(@Body() dto: OrderDto) {
     console.log(dto);
     return this.orderService.createOrder(dto);
+  }
+
+  @Delete('DeleteOrder')
+  @UsePipes(ValidationPipe)
+  async deleteOrder(@Body() id: number ): Promise<void> {
+    await this.orderService.deleteOrder(id) ;
+  }
+
+  @Put('AcceptOrder') 
+  async updateOrder(@Query('idorder') id: number , @Body() accept: boolean) : Promise<void> {
+    await this.orderService.updateOrder(id,accept) ;
   }
 }
